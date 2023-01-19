@@ -1,56 +1,25 @@
-
 package model;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
-public class Children {
-    public Children(String name, int grade, int age){
-        name = name;
-        id = id;
-        age = age;
-    }
-    String name;
+public class Children extends Parent{
+    public String name;
     int grade;
     int age;
-    ArrayList hobbies;
+    ArrayList<Hobby> Hobby;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Children(String family_name, String name, int grade, int age, ArrayList<model.Hobby> hobby) {
+        super(family_name);
         this.name = name;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
         this.grade = grade;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
         this.age = age;
+        Hobby = hobby;
     }
-
-    public ArrayList getHobbies() {
-        return hobbies;
-    }
-
-    public void setHobbies(ArrayList hobbies) {
-        this.hobbies = hobbies;
-
-        public Children(String name, int grade, int age, ArrayList hobbies) {
-            this.name = name;
-            this.grade = grade;
-            this.age = age;
-            this.hobbies = hobbies;
+    public void format(){
+        String name="Your name is"+" "+ this.name+" "+this.family_name;
+        System.out.println(name);
+        for (Hobby i : Hobby){
+            System.out.print("Your hobby is "+i);
         }
     }
 }
-
